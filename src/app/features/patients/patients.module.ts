@@ -4,6 +4,7 @@ import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientRegistrationComponent } from './patient-registration/patient-registration.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
+import { AppointmentProgressComponent } from '../patient/appointment-progress/appointment-progress.component';
 
 
 
@@ -12,7 +13,8 @@ import { PatientHistoryComponent } from './patient-history/patient-history.compo
     PatientListComponent,
     PatientRegistrationComponent,
     PatientDetailsComponent,
-    PatientHistoryComponent
+    PatientHistoryComponent,
+    AppointmentProgressComponent
   ],
   imports: [
     CommonModule

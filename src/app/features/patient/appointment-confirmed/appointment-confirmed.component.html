@@ -1,0 +1,160 @@
+<div class="confirmed-page">
+
+  <header class="page-header">
+
+    <button
+      class="back-button"
+      routerLink="/patient/dashboard"
+    >
+      <span class="material-icons">
+        arrow_back_ios
+      </span>
+    </button>
+
+    <h1>Appointment Details</h1>
+
+    <div></div>
+
+  </header>
+
+
+  <!-- SUCCESS -->
+
+  <section class="success-card">
+
+    <div class="success-icon">
+      <span class="material-icons">
+        check
+      </span>
+    </div>
+
+    <div>
+      <h2>
+        Appointment Confirmed!
+      </h2>
+
+      <p>
+        Your appointment has been booked successfully.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- REFERENCE -->
+
+  <section class="reference-card">
+
+    <span>
+      Booking Reference
+    </span>
+
+    <strong>
+      {{ bookingReference }}
+    </strong>
+
+  </section>
+
+
+  <!-- DOCTOR -->
+
+  <section class="doctor-summary">
+
+    <div class="doctor-avatar">
+
+      <span class="material-icons">
+        person
+      </span>
+
+    </div>
+
+    <div>
+
+      <h2>
+        {{ appointment.doctor }}
+      </h2>
+
+      <p>
+        {{ appointment.specialty }}
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- DETAILS -->
+
+  <section class="details-card">
+
+    <div>
+      <span>Date</span>
+      <strong>{{ appointment.date }}</strong>
+    </div>
+
+    <div>
+      <span>Time</span>
+      <strong>{{ appointment.time }}</strong>
+    </div>
+
+    <div>
+      <span>Location</span>
+      <strong>Mobile Clinic</strong>
+    </div>
+
+    <div>
+      <span>Reason for visit</span>
+      <strong>{{ appointment.service }}</strong>
+    </div>
+
+  </section>
+
+
+  <!-- ACTIONS -->
+
+  <div class="appointment-actions">
+
+    <button
+      class="secondary-button"
+      routerLink="/patient/appointment-date-time"
+    >
+      Reschedule
+    </button>
+
+    <button class="danger-button">
+      Cancel
+    </button>
+
+  </div>
+
+
+  <!-- BOTTOM NAV -->
+
+  <nav class="bottom-navigation">
+
+    <a
+      class="active"
+      routerLink="/patient/dashboard"
+    >
+      <span class="material-icons">home</span>
+      <span>Home</span>
+    </a>
+
+    <a>
+      <span class="material-icons">calendar_month</span>
+      <span>Appointments</span>
+    </a>
+
+    <a>
+      <span class="material-icons">description</span>
+      <span>Records</span>
+    </a>
+
+    <a>
+      <span class="material-icons">person</span>
+      <span>Profile</span>
+    </a>
+
+  </nav>
+
+</div>
