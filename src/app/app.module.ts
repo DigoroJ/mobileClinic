@@ -3,24 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-import { LoadingComponent } from './shared/components/loading/loading.component';
-import { ConfirmationDialogComponent } from './shared/components/confirmation-dialog/confirmation-dialog.component';
+
+import { MainLayoutComponent } from './core/layout/main-layout/main-layout.component';
+
+import { SharedModule } from './shared/shared.module';
+import { DashboardModule } from './features/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    SidebarComponent,
-    LoadingComponent,
-    ConfirmationDialogComponent
+    MainLayoutComponent
   ],
+
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    DashboardModule
   ],
+
   providers: [],
+
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
