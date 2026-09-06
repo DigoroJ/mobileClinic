@@ -16,6 +16,7 @@ import { AppointmentDateTimeComponent } from './features/patient/appointment-dat
 import { ReviewAppointmentComponent } from './features/patient/appointment-review/appointment-review.component';
 import { AppointmentConfirmedComponent } from './features/patient/appointment-confirmed/appointment-confirmed.component';
 import { AppointmentProgressComponent } from './features/patient/appointment-progress/appointment-progress.component';
+import { SymptomCheckerComponent } from './features/patient/symptom-checker/symptom-checker.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AppointmentProgressComponent } from './features/patient/appointment-pro
     AppointmentDateTimeComponent,
     ReviewAppointmentComponent,
     AppointmentConfirmedComponent,
-    AppointmentProgressComponent
+    AppointmentProgressComponent,
+    SymptomCheckerComponent
   ],
 
   imports: [

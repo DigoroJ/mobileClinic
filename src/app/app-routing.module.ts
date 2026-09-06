@@ -10,6 +10,8 @@ import { SelectDoctorComponent } from './features/patient/select-doctor/select-d
 import { AppointmentDateTimeComponent } from './features/patient/appointment-date-time/appointment-date-time.component';
 import { ReviewAppointmentComponent } from './features/patient/appointment-review/appointment-review.component';
 import { AppointmentConfirmedComponent } from './features/patient/appointment-confirmed/appointment-confirmed.component';
+import { SymptomCheckerComponent } from './features/patient/symptom-checker/symptom-checker.component';
+import { SymptomResultComponent } from './features/patient/symptom-result/symptom-result.component';
 
 
 
@@ -54,35 +56,37 @@ const routes: Routes = [
   component: PatientLayoutComponent,
 
   children: [
-
     {
       path: 'dashboard',
       component: PatientDashboardComponent
     },
-
     {
       path: 'book-appointment',
       component: BookAppointmentComponent
     },
-
     {
       path: 'select-doctor',
       component: SelectDoctorComponent
     },
-
     {
       path: 'appointment-date-time',
       component: AppointmentDateTimeComponent
     },
-
     {
       path: 'appointment-review',
       component: ReviewAppointmentComponent
     },
-
     {
       path: 'appointment-confirmed',
       component: AppointmentConfirmedComponent
+    },
+    {
+      path: 'symptom-checker',
+      component: SymptomCheckerComponent
+    },
+    {
+      path: 'symptom-result',
+      component: SymptomResultComponent
     }
 
   ]

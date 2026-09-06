@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppointmentService } from '../appointment.service';
 
@@ -7,26 +7,35 @@ import { AppointmentService } from '../appointment.service';
   templateUrl: './appointment-confirmed.component.html',
   styleUrls: ['./appointment-confirmed.component.scss']
 })
-export class AppointmentConfirmedComponent {
+export class AppointmentConfirmedComponent implements OnInit {
 
-  appointment;
-
-  bookingReference = 'MC-2026-000145';
+  appointment = {
+    service: '',
+    doctor: '',
+    specialty: '',
+    date: '',
+    time: ''
+  };
 
   constructor(
     private router: Router,
     private appointmentService: AppointmentService
-  ) {
-    this.appointment =
-      this.appointmentService.getAppointment();
+  ) {}
+
+  ngOnInit(): void {
+    this.appointment = this.appointmentService.getAppointment();
   }
 
-  goHome(): void {
-
-    this.router.navigate([
-      '/patient/dashboard'
-    ]);
-
+  goToDashboard(): void {
+    this.router.navigate(['/patient/dashboard']);
   }
 
+  viewAppointments(): void {
+    this.router.navigate(['/patient/appointments']);
+  }
+
+  bookAnotherAppointment(): void {
+    this.appointmentService.clearAppointment();
+    this.router.navigate(['/patient/book-appointment']);
+  }
 }

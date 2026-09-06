@@ -45,7 +45,7 @@ export class AppointmentService {
     return this.appointment;
   }
 
-  clear(): void {
+  clearAppointment(): void {
     this.appointment = {
       service: '',
       doctor: '',

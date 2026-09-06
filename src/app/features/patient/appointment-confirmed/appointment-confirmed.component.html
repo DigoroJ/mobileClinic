@@ -1,156 +1,156 @@
-<div class="confirmed-page">
+<div class="confirmation-page">
 
-  <header class="page-header">
+  <!-- Progress -->
+  <app-appointment-progress
+    [currentStep]="5">
+  </app-appointment-progress>
 
-    <button
-      class="back-button"
-      routerLink="/patient/dashboard"
-    >
-      <span class="material-icons">
-        arrow_back_ios
-      </span>
-    </button>
+  <main class="confirmation-content">
 
-    <h1>Appointment Details</h1>
-
-    <div></div>
-
-  </header>
-
-
-  <!-- SUCCESS -->
-
-  <section class="success-card">
-
+    <!-- Success Icon -->
     <div class="success-icon">
-      <span class="material-icons">
-        check
-      </span>
+      <span class="material-icons">check</span>
     </div>
 
-    <div>
-      <h2>
-        Appointment Confirmed!
-      </h2>
+    <!-- Heading -->
+    <h1>Appointment Confirmed!</h1>
 
-      <p>
-        Your appointment has been booked successfully.
-      </p>
+    <p class="confirmation-message">
+      Your appointment has been successfully booked.
+      We look forward to seeing you.
+    </p>
+
+    <!-- Appointment Card -->
+    <section class="appointment-card">
+
+      <div class="card-header">
+        <div>
+          <span class="material-icons">event_available</span>
+          <div>
+            <h2>Appointment Details</h2>
+            <p>Booking confirmed</p>
+          </div>
+        </div>
+
+        <span class="status-badge">
+          Confirmed
+        </span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="appointment-details">
+
+        <!-- Service -->
+        <div class="detail-item">
+          <span class="material-icons">medical_services</span>
+
+          <div>
+            <span class="detail-label">Service</span>
+            <strong>{{ appointment.service || 'General Consultation' }}</strong>
+          </div>
+        </div>
+
+        <!-- Doctor -->
+        <div class="detail-item">
+          <span class="material-icons">person</span>
+
+          <div>
+            <span class="detail-label">Healthcare Provider</span>
+            <strong>{{ appointment.doctor || 'Selected Doctor' }}</strong>
+
+            <small *ngIf="appointment.specialty">
+              {{ appointment.specialty }}
+            </small>
+          </div>
+        </div>
+
+        <!-- Date -->
+        <div class="detail-item">
+          <span class="material-icons">calendar_today</span>
+
+          <div>
+            <span class="detail-label">Date</span>
+            <strong>{{ appointment.date || 'Appointment Date' }}</strong>
+          </div>
+        </div>
+
+        <!-- Time -->
+        <div class="detail-item">
+          <span class="material-icons">schedule</span>
+
+          <div>
+            <span class="detail-label">Time</span>
+            <strong>{{ appointment.time || 'Appointment Time' }}</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Reference -->
+      <div class="booking-reference">
+        <span>Booking Reference</span>
+        <strong>MC-{{ appointment.date | date:'yyyyMMdd' }}-001</strong>
+      </div>
+
+    </section>
+
+    <!-- Notification -->
+    <div class="notification">
+      <span class="material-icons">notifications</span>
+
+      <div>
+        <strong>Appointment reminder</strong>
+        <p>
+          You will receive a reminder before your appointment.
+        </p>
+      </div>
     </div>
 
-  </section>
+    <!-- Actions -->
+    <div class="confirmation-actions">
 
+      <button
+        type="button"
+        class="primary-button"
+        (click)="goToDashboard()">
+        <span class="material-icons">dashboard</span>
+        Go to Dashboard
+      </button>
 
-  <!-- REFERENCE -->
+      <button
+        type="button"
+        class="secondary-button"
+        (click)="viewAppointments()">
+        <span class="material-icons">event</span>
+        View My Appointments
+      </button>
 
-  <section class="reference-card">
-
-    <span>
-      Booking Reference
-    </span>
-
-    <strong>
-      {{ bookingReference }}
-    </strong>
-
-  </section>
-
-
-  <!-- DOCTOR -->
-
-  <section class="doctor-summary">
-
-    <div class="doctor-avatar">
-
-      <span class="material-icons">
-        person
-      </span>
+      <button
+        type="button"
+        class="text-button"
+        (click)="bookAnotherAppointment()">
+        Book Another Appointment
+      </button>
 
     </div>
 
-    <div>
+  </main>
 
-      <h2>
-        {{ appointment.doctor }}
-      </h2>
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav">
 
-      <p>
-        {{ appointment.specialty }}
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- DETAILS -->
-
-  <section class="details-card">
-
-    <div>
-      <span>Date</span>
-      <strong>{{ appointment.date }}</strong>
-    </div>
-
-    <div>
-      <span>Time</span>
-      <strong>{{ appointment.time }}</strong>
-    </div>
-
-    <div>
-      <span>Location</span>
-      <strong>Mobile Clinic</strong>
-    </div>
-
-    <div>
-      <span>Reason for visit</span>
-      <strong>{{ appointment.service }}</strong>
-    </div>
-
-  </section>
-
-
-  <!-- ACTIONS -->
-
-  <div class="appointment-actions">
-
-    <button
-      class="secondary-button"
-      routerLink="/patient/appointment-date-time"
-    >
-      Reschedule
-    </button>
-
-    <button class="danger-button">
-      Cancel
-    </button>
-
-  </div>
-
-
-  <!-- BOTTOM NAV -->
-
-  <nav class="bottom-navigation">
-
-    <a
-      class="active"
-      routerLink="/patient/dashboard"
-    >
+    <a routerLink="/patient/dashboard">
       <span class="material-icons">home</span>
       <span>Home</span>
     </a>
 
-    <a>
-      <span class="material-icons">calendar_month</span>
+    <a routerLink="/patient/appointments">
+      <span class="material-icons">event</span>
       <span>Appointments</span>
     </a>
 
-    <a>
-      <span class="material-icons">description</span>
-      <span>Records</span>
-    </a>
-
-    <a>
+    <a routerLink="/patient/profile">
       <span class="material-icons">person</span>
       <span>Profile</span>
     </a>
