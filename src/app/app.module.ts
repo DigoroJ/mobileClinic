@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { MainLayoutComponent } from './core/layout/main-layout/main-layout.component';
 
@@ -17,6 +19,14 @@ import { ReviewAppointmentComponent } from './features/patient/appointment-revie
 import { AppointmentConfirmedComponent } from './features/patient/appointment-confirmed/appointment-confirmed.component';
 import { AppointmentProgressComponent } from './features/patient/appointment-progress/appointment-progress.component';
 import { SymptomCheckerComponent } from './features/patient/symptom-checker/symptom-checker.component';
+import { PatientsComponent } from './features/patients/patients/patients.component';
+import { DoctorsComponent } from './features/doctors/doctors/doctors.component';
+import { NursesComponent } from './features/nurses/nurses/nurses.component';
+import { ReportsComponent } from './features/report/reports/reports.component';
+import { SettingsComponent } from './features/settings/settings/settings.component';
+import { MedicalRecordsComponent } from './features/records/medical-records/medical-records.component';
+import { AppointmentsModule } from './features/appointments/appointments.module';
+import { AiModule } from './features/ai/ai.module';
 
 @NgModule({
   declarations: [
@@ -30,14 +40,24 @@ import { SymptomCheckerComponent } from './features/patient/symptom-checker/symp
     ReviewAppointmentComponent,
     AppointmentConfirmedComponent,
     AppointmentProgressComponent,
-    SymptomCheckerComponent
+    SymptomCheckerComponent,
+    PatientsComponent,
+    DoctorsComponent,
+    NursesComponent,
+    MedicalRecordsComponent,
+    ReportsComponent,
+    SettingsComponent
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    DashboardModule
+    DashboardModule,
+    FormsModule,
+    CommonModule,
+    AppointmentsModule,
+    AiModule
   ],
 
   providers: [],

@@ -47,17 +47,17 @@ export class SidebarComponent {
     {
       label: 'AI Triage',
       icon: 'psychology',
-      route: '/triage'
+      route: '/ai-triage'
     },
     {
       label: 'AI Analytics',
       icon: 'analytics',
-      route: '/ai'
+      route: '/ai-analytics'
     },
     {
       label: 'Dataset & EDA',
       icon: 'dataset',
-      route: '/datasets'
+      route: '/dataset-eda'
     },
     {
       label: 'Reports',

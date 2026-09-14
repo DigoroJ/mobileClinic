@@ -12,6 +12,16 @@ import { ReviewAppointmentComponent } from './features/patient/appointment-revie
 import { AppointmentConfirmedComponent } from './features/patient/appointment-confirmed/appointment-confirmed.component';
 import { SymptomCheckerComponent } from './features/patient/symptom-checker/symptom-checker.component';
 import { SymptomResultComponent } from './features/patient/symptom-result/symptom-result.component';
+import { PatientsComponent } from './features/patients/patients/patients.component';
+import { DoctorsComponent } from './features/doctors/doctors/doctors.component';
+import { NursesComponent } from './features/nurses/nurses/nurses.component';
+import { AppointmentsComponent } from './features/appointments/appointments/appointments.component';
+import { MedicalRecordsComponent } from './features/records/medical-records/medical-records.component';
+import { AiAnalyticsComponent } from './features/ai/ai-analytics/ai-analytics.component';
+import { AiTriageComponent } from './features/ai/ai-triage/ai-triage.component';
+import { DatasetEdaComponent } from './features/ai/dataset-eda/dataset-eda.component';
+import { ReportsComponent } from './features/report/reports/reports.component';
+import { SettingsComponent } from './features/settings/settings/settings.component';
 
 
 
@@ -37,10 +47,49 @@ const routes: Routes = [
     component: MainLayoutComponent,
 
     children: [
-
       {
         path: 'dashboard',
         component: AdminDashboardComponent
+      },
+      {
+        path: 'patients',
+        component: PatientsComponent
+      },
+      {
+        path: 'doctors',
+        component: DoctorsComponent
+      },
+      {
+        path: 'nurses',
+        component: NursesComponent
+      },
+      {
+        path: 'appointments',
+        component: AppointmentsComponent
+      },
+      {
+        path: 'medical-records',
+        component: MedicalRecordsComponent
+      },
+      {
+        path: 'ai-triage',
+        component: AiTriageComponent
+      },
+      {
+        path: 'ai-analytics',
+        component: AiAnalyticsComponent
+      },
+      {
+        path: 'dataset-eda',
+        component: DatasetEdaComponent
+      },
+      {
+        path: 'reports',
+        component: ReportsComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
       }
 
     ]

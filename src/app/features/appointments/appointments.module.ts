@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentBookingComponent } from './appointment-booking/appointment-booking.component';
 import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -10,10 +12,12 @@ import { AppointmentDetailsComponent } from './appointment-details/appointment-d
   declarations: [
     AppointmentListComponent,
     AppointmentBookingComponent,
-    AppointmentDetailsComponent
+    AppointmentDetailsComponent,
+    AppointmentsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class AppointmentsModule { }
