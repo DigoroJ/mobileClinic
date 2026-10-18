@@ -1,36 +1,53 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AppointmentService } from '../appointment.service';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../core/services/api.service';
 
 @Component({
   selector: 'app-book-appointment',
   templateUrl: './book-appointment.component.html',
   styleUrls: ['./book-appointment.component.scss']
 })
-export class BookAppointmentComponent {
+export class BookAppointmentComponent implements OnInit {
 
-  selectedService = '';
+  services: any[] = [];
 
-  constructor(
-    private router: Router,
-    private appointmentService: AppointmentService
-  ) {}
+  loading = false;
 
-  selectService(service: string): void {
-    this.selectedService = service;
+  error = '';
 
-    this.appointmentService.setService(service);
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit(): void {
+    this.loadServices();
   }
 
-  continue(): void {
+  loadServices(): void {
 
-    if (!this.selectedService) {
-      return;
-    }
+    this.loading = true;
+    this.error = '';
 
-    this.router.navigate([
-      '/patient/select-doctor'
-    ]);
+    this.apiService.getServices().subscribe({
+
+      next: (response: any) => {
+
+        console.log('API response:', response);
+
+        this.services = response.data;
+
+        this.loading = false;
+
+      },
+
+      error: (error: any) => {
+
+        console.error('API error:', error);
+
+        this.error = 'Unable to load services.';
+
+        this.loading = false;
+
+      }
+
+    });
 
   }
 
